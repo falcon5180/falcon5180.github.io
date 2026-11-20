@@ -1,0 +1,1701 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>911爆料免费版_热点线索聚合平台 - 真实记录,官方品牌</title>
+<meta name="description" content="911爆料免费版官方网站，聚焦热点线索与真实记录的视频内容平台，汇聚创作者爆料影像、深度追踪与社区讨论，持续输出专业、正版的精品内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314181f'/%3E%3Cpath d='M32 12 L40 28 L56 32 L40 36 L32 52 L24 36 L8 32 L24 28 Z' fill='%23ff5a3c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --kx-bg:#101318;
+  --kx-bg2:#161b23;
+  --kx-card:#1b212b;
+  --kx-line:#2a323f;
+  --kx-text:#e8ecf2;
+  --kx-muted:#94a2b5;
+  --kx-accent:#ff5a3c;
+  --kx-accent2:#2ee6c5;
+  --kx-amber:#ffcb45;
+  --kx-radius:14px;
+  --kx-sticky:112px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--kx-sticky);}
+body{
+  margin:0;
+  background:var(--kx-bg);
+  color:var(--kx-text);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:800;letter-spacing:.2px;}
+p{margin:0 0 14px;}
+ul{margin:0;padding:0;list-style:none;}
+.kx-wrap{width:min(1180px,92vw);margin:0 auto;}
+.kx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+/* ===== 吸顶容器：公告条 + 页头 ===== */
+.kx-sticky-zone{
+  position:sticky;top:0;z-index:80;
+  backdrop-filter:blur(14px);
+}
+.kx-notice{
+  background:linear-gradient(90deg,#ff5a3c,#ff8a3c 55%,#ffcb45);
+  color:#1a1208;
+  font-size:13.5px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.kx-notice-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:9px 0;
+  overflow:hidden;
+}
+.kx-notice-tag{
+  flex:0 0 auto;
+  background:#1a1208;color:#ffcb45;
+  padding:2px 9px;border-radius:6px;font-size:12px;
+}
+.kx-notice-text{
+  flex:1 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.kx-notice-text b{font-weight:800;}
+.kx-notice-close{
+  flex:0 0 auto;font-size:16px;color:#1a1208;opacity:.65;
+  padding:0 4px;
+}
+.kx-notice-close:hover{opacity:1;}
+
+.kx-header{
+  background:rgba(16,19,24,.92);
+  border-bottom:1px solid var(--kx-line);
+}
+.kx-header-inner{
+  display:flex;align-items:center;gap:22px;
+  padding:12px 0;
+}
+.kx-brand{
+  display:flex;align-items:center;gap:11px;
+  flex:0 0 auto;
+}
+.kx-brand-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#ff8a3c,#ff5a3c 60%,#c33318);
+  display:grid;place-items:center;
+  font-weight:900;font-size:17px;color:#fff;
+  box-shadow:0 6px 18px rgba(255,90,60,.32);
+}
+.kx-brand-name{font-size:19px;font-weight:900;letter-spacing:.5px;}
+.kx-brand-sub{font-size:11.5px;color:var(--kx-muted);letter-spacing:1.6px;}
+.kx-nav{
+  display:flex;align-items:center;gap:4px;flex:1 1 auto;flex-wrap:wrap;
+}
+.kx-nav a{
+  padding:7px 12px;border-radius:9px;font-size:14.5px;color:#c3cdda;
+  transition:.2s;
+}
+.kx-nav a:hover{background:#222a35;color:#fff;}
+.kx-nav a.is-active{color:#fff;background:#222a35;box-shadow:inset 0 -2px 0 var(--kx-accent);}
+.kx-head-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.kx-search{
+  display:flex;align-items:center;gap:8px;
+  background:#1a212b;border:1px solid var(--kx-line);
+  border-radius:11px;padding:7px 12px;
+  transition:.2s;
+}
+.kx-search:focus-within{border-color:var(--kx-accent);box-shadow:0 0 0 3px rgba(255,90,60,.16);}
+.kx-search input{
+  background:none;border:0;outline:none;color:var(--kx-text);
+  font-size:14px;width:150px;
+}
+.kx-search input::placeholder{color:#6d7b8c;}
+.kx-search-ico{color:#7d8b9d;font-size:14px;}
+.kx-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:11px;font-size:14px;font-weight:700;
+  transition:.2s;white-space:nowrap;
+}
+.kx-btn-primary{
+  background:linear-gradient(135deg,#ff5a3c,#ff8a3c);color:#fff;
+  box-shadow:0 8px 22px rgba(255,90,60,.28);
+}
+.kx-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,90,60,.4);}
+.kx-btn-ghost{
+  background:#1e2531;color:#d6dfea;border:1px solid var(--kx-line);
+}
+.kx-btn-ghost:hover{background:#28313e;border-color:#3b475a;}
+.kx-toggle{display:none;font-size:22px;padding:4px 8px;color:#cfd8e3;}
+.kx-search-feedback{
+  font-size:12.5px;color:var(--kx-accent2);
+  max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+
+/* ===== 首屏 ===== */
+.kx-hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--kx-line);
+  background:
+    radial-gradient(1000px 500px at 85% -10%,rgba(255,90,60,.18),transparent 62%),
+    radial-gradient(700px 420px at 5% 110%,rgba(46,230,197,.12),transparent 60%),
+    var(--kx-bg);
+}
+.kx-hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:46px;
+  padding:58px 0 62px;align-items:center;
+}
+.kx-kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;font-weight:800;letter-spacing:1.6px;
+  color:var(--kx-amber);
+  border:1px solid rgba(255,203,69,.4);
+  background:rgba(255,203,69,.08);
+  padding:5px 13px;border-radius:999px;
+  margin-bottom:18px;
+}
+.kx-kicker .kx-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--kx-amber);
+  animation:kxPulse 1.8s infinite;
+}
+@keyframes kxPulse{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.35;transform:scale(.7);}
+}
+.kx-hero h1{
+  font-size:clamp(34px,4.6vw,58px);
+  letter-spacing:1px;
+  background:linear-gradient(100deg,#ffffff 20%,#ffd7c9 55%,#ff8a3c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.kx-hero-lead{
+  font-size:17.5px;color:#c9d4e1;margin-top:16px;max-width:560px;
+}
+.kx-hero-desc{
+  color:var(--kx-muted);font-size:14.6px;margin-top:12px;max-width:570px;text-align:justify;
+}
+.kx-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.kx-hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;
+  max-width:540px;
+}
+.kx-stat{
+  background:linear-gradient(180deg,#1c232e,#161b23);
+  border:1px solid var(--kx-line);border-radius:13px;
+  padding:14px 16px;
+}
+.kx-stat-num{
+  font-size:24px;font-weight:900;color:#fff;letter-spacing:.5px;
+}
+.kx-stat-num small{font-size:13px;color:var(--kx-accent2);margin-left:3px;font-weight:700;}
+.kx-stat-label{font-size:12.5px;color:var(--kx-muted);margin-top:2px;}
+
+/* 主视觉拼贴 */
+.kx-hero-visual{position:relative;}
+.kx-hero-main{
+  border-radius:18px;overflow:hidden;border:1px solid #2c3543;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+  position:relative;
+}
+.kx-hero-main img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+.kx-hero-main .kx-live{
+  position:absolute;left:14px;top:14px;
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(20,24,30,.82);backdrop-filter:blur(6px);
+  padding:5px 11px;border-radius:999px;
+  font-size:12px;font-weight:800;color:#ffb3a3;
+}
+.kx-hero-main .kx-live i{
+  width:8px;height:8px;border-radius:50%;background:var(--kx-accent);
+  animation:kxPulse 1.4s infinite;
+}
+.kx-hero-float{
+  position:absolute;right:-10px;bottom:-26px;
+  width:62%;border-radius:14px;overflow:hidden;
+  border:1px solid #35404f;
+  box-shadow:0 18px 42px rgba(0,0,0,.6);
+  background:#151a22;
+}
+.kx-hero-float img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.kx-hero-float span{
+  display:block;padding:8px 11px;font-size:12.5px;color:#cdd7e3;
+  background:#151a22;
+}
+.kx-hero-badge{
+  position:absolute;left:-14px;top:-14px;
+  background:var(--kx-accent2);color:#06231f;
+  font-weight:900;font-size:12.5px;letter-spacing:.6px;
+  padding:7px 13px;border-radius:10px;
+  transform:rotate(-5deg);
+  box-shadow:0 10px 24px rgba(46,230,197,.35);
+}
+
+/* ===== 通用 section ===== */
+.kx-section{padding:62px 0;border-bottom:1px solid var(--kx-line);}
+.kx-section:nth-of-type(even){background:var(--kx-bg2);}
+.kx-sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;margin-bottom:32px;
+}
+.kx-sec-title{font-size:clamp(23px,2.8vw,32px);}
+.kx-sec-title .kx-bar{
+  display:inline-block;width:34px;height:5px;border-radius:3px;
+  background:linear-gradient(90deg,var(--kx-accent),var(--kx-amber));
+  margin-right:12px;vertical-align:middle;
+}
+.kx-sec-sub{color:var(--kx-muted);font-size:14.5px;margin-top:8px;max-width:640px;}
+.kx-sec-more{font-size:14px;color:var(--kx-accent2);font-weight:700;}
+.kx-sec-more:hover{color:#fff;}
+
+/* ===== 深度解析长文 ===== */
+.kx-about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start;}
+.kx-about-card{
+  background:linear-gradient(165deg,#1d242f,#141a22);
+  border:1px solid var(--kx-line);border-radius:18px;
+  padding:26px;
+  position:relative;overflow:hidden;
+}
+.kx-about-card::before{
+  content:"";position:absolute;inset:-40% -20% auto auto;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,90,60,.25),transparent 70%);
+}
+.kx-about-card h3{font-size:19px;margin-bottom:10px;position:relative;}
+.kx-about-card p{color:var(--kx-muted);font-size:14.4px;position:relative;margin-bottom:10px;}
+.kx-about-list{margin-top:16px;position:relative;}
+.kx-about-list li{
+  display:flex;gap:10px;font-size:14px;color:#c5d0dd;padding:7px 0;
+  border-bottom:1px dashed #2a3340;
+}
+.kx-about-list li:last-child{border-bottom:0;}
+.kx-about-list b{color:var(--kx-amber);flex:0 0 auto;}
+.kx-about-body p{color:#b7c3d1;font-size:15px;text-align:justify;margin-bottom:15px;}
+.kx-about-body h3{font-size:18px;margin:22px 0 10px;color:#fff;}
+.kx-about-body strong{color:var(--kx-amber);}
+
+/* ===== 焦点内容 ===== */
+.kx-focus-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px;}
+.kx-vcard{
+  background:var(--kx-card);border:1px solid var(--kx-line);
+  border-radius:var(--kx-radius);overflow:hidden;
+  transition:.25s;position:relative;
+  display:flex;flex-direction:column;
+}
+.kx-vcard:hover{transform:translateY(-5px);border-color:#3d4a5d;box-shadow:0 18px 38px rgba(0,0,0,.45);}
+.kx-thumb{position:relative;overflow:hidden;background:#0d1117;}
+.kx-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.5s;}
+.kx-vcard:hover .kx-thumb img{transform:scale(1.06);}
+.kx-thumb-tag{
+  position:absolute;left:10px;top:10px;z-index:2;
+  background:rgba(12,15,20,.8);backdrop-filter:blur(6px);
+  color:#ffd0c6;font-size:11.5px;font-weight:800;
+  padding:3px 9px;border-radius:7px;letter-spacing:.4px;
+}
+.kx-thumb-time{
+  position:absolute;right:10px;bottom:10px;z-index:2;
+  background:rgba(8,11,16,.82);color:#dfe7f0;
+  font-size:11.5px;padding:2px 7px;border-radius:6px;
+}
+.kx-play{
+  position:absolute;inset:0;display:grid;place-items:center;z-index:1;
+  pointer-events:none;
+}
+.kx-play i{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,90,60,.9);color:#fff;
+  display:grid;place-items:center;font-size:17px;font-style:normal;
+  box-shadow:0 8px 22px rgba(255,90,60,.45);
+}
+.kx-vcard-body{padding:15px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1;}
+.kx-vcard-title{font-size:15.6px;font-weight:800;line-height:1.5;}
+.kx-vcard-excerpt{font-size:13.2px;color:var(--kx-muted);line-height:1.65;}
+.kx-vcard-meta{
+  margin-top:auto;display:flex;align-items:center;gap:9px;
+  font-size:12.3px;color:#8b99ab;flex-wrap:wrap;
+}
+.kx-avatar{
+  width:26px;height:26px;border-radius:50%;flex:0 0 auto;
+  display:grid;place-items:center;font-size:12px;font-weight:900;color:#0c1118;
+}
+.kx-vcard-actions{
+  display:flex;gap:6px;margin-top:10px;padding-top:10px;
+  border-top:1px solid #252d39;
+}
+.kx-act{
+  flex:1 1 auto;
+  font-size:12.3px;color:#93a1b3;background:#212935;
+  border-radius:8px;padding:6px 4px;text-align:center;transition:.2s;
+}
+.kx-act:hover{background:#2b3543;color:#fff;}
+.kx-act.is-liked{color:var(--kx-accent);background:rgba(255,90,60,.13);}
+.kx-act.is-saved{color:var(--kx-amber);background:rgba(255,203,69,.12);}
+.kx-focus-feature .kx-vcard-title{font-size:19px;}
+.kx-focus-feature .kx-vcard-excerpt{font-size:13.8px;}
+
+/* ===== 视频流 ===== */
+.kx-filter-row{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px;}
+.kx-chip{
+  font-size:13.2px;font-weight:700;padding:6px 14px;border-radius:999px;
+  background:#1e2531;color:#a9b7c8;border:1px solid var(--kx-line);transition:.2s;
+}
+.kx-chip:hover{color:#fff;border-color:#3d4a5d;}
+.kx-chip.is-on{background:linear-gradient(135deg,#ff5a3c,#ff8a3c);color:#fff;border-color:transparent;}
+.kx-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+
+/* ===== 专题 ===== */
+.kx-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.kx-topic{
+  border-radius:var(--kx-radius);overflow:hidden;position:relative;
+  border:1px solid #2c3543;transition:.25s;min-height:250px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.kx-topic:hover{transform:translateY(-4px);border-color:#4a586c;}
+.kx-topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.kx-topic::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,13,18,.15) 20%,rgba(10,13,18,.92) 92%);
+}
+.kx-topic-body{position:relative;z-index:2;padding:18px;}
+.kx-topic-status{
+  display:inline-block;font-size:11.5px;font-weight:800;
+  padding:3px 9px;border-radius:6px;margin-bottom:9px;
+}
+.kx-status-live{background:rgba(255,90,60,.9);color:#fff;}
+.kx-status-soon{background:rgba(255,203,69,.9);color:#241a05;}
+.kx-status-done{background:rgba(46,230,197,.85);color:#04231e;}
+.kx-topic h3{font-size:17px;margin-bottom:6px;}
+.kx-topic p{font-size:13px;color:#c2cdda;margin:0;}
+
+/* ===== 创作者 ===== */
+.kx-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.kx-creator{
+  background:var(--kx-card);border:1px solid var(--kx-line);
+  border-radius:var(--kx-radius);padding:20px 17px;text-align:center;
+  transition:.25s;
+}
+.kx-creator:hover{transform:translateY(-5px);border-color:#3d4a5d;box-shadow:0 16px 34px rgba(0,0,0,.4);}
+.kx-creator-ava{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 12px;
+  display:grid;place-items:center;font-size:24px;font-weight:900;color:#0c1118;
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+.kx-creator h3{font-size:16.5px;margin-bottom:4px;}
+.kx-creator .kx-role{font-size:12.3px;color:var(--kx-accent2);font-weight:700;margin-bottom:8px;}
+.kx-creator p{font-size:12.8px;color:var(--kx-muted);min-height:56px;margin-bottom:10px;}
+.kx-creator-stats{
+  display:flex;justify-content:center;gap:14px;font-size:12px;color:#95a3b5;
+  border-top:1px solid #252d39;padding-top:10px;margin-bottom:10px;
+}
+.kx-creator-stats b{color:#fff;font-size:13px;}
+.kx-mini-btn{
+  font-size:12.5px;font-weight:800;padding:6px 14px;border-radius:9px;
+  background:#222b37;color:#cfdae6;transition:.2s;width:100%;
+}
+.kx-mini-btn:hover{background:var(--kx-accent);color:#fff;}
+
+/* ===== 影像墙 ===== */
+.kx-wall{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  grid-auto-rows:150px;
+}
+.kx-wall-item{
+  position:relative;border-radius:12px;overflow:hidden;border:1px solid #2c3543;
+  transition:.25s;
+}
+.kx-wall-item:hover{transform:scale(1.02);border-color:#4a586c;}
+.kx-wall-item img{width:100%;height:100%;object-fit:cover;}
+.kx-wall-item span{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:22px 10px 8px;font-size:12.2px;color:#eaf0f7;font-weight:700;
+  background:linear-gradient(180deg,transparent,rgba(8,11,16,.9));
+}
+.kx-wall-big{grid-column:span 2;grid-row:span 2;}
+.kx-wall-wide{grid-column:span 2;}
+
+/* ===== 评价 ===== */
+.kx-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.kx-review{
+  background:linear-gradient(170deg,#1d242f,#171d26);
+  border:1px solid var(--kx-line);border-radius:var(--kx-radius);
+  padding:18px 19px;
+}
+.kx-review:nth-child(2n){background:linear-gradient(170deg,#1e2532,#151b24);}
+.kx-review-top{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.kx-review-top .kx-avatar{width:34px;height:34px;font-size:14px;}
+.kx-review-name{font-size:13.6px;font-weight:800;}
+.kx-review-tag{font-size:11.5px;color:var(--kx-muted);}
+.kx-review p{font-size:13.4px;color:#c0ccda;margin:0;line-height:1.7;}
+.kx-stars{color:var(--kx-amber);font-size:12.5px;letter-spacing:1px;margin-top:10px;}
+
+/* ===== 榜单 ===== */
+.kx-rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.kx-rank{
+  background:var(--kx-card);border:1px solid var(--kx-line);
+  border-radius:var(--kx-radius);padding:20px 22px;
+}
+.kx-rank h3{font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.kx-rank h3 em{
+  font-style:normal;font-size:11.5px;font-weight:800;color:#06231f;
+  background:var(--kx-accent2);padding:2px 8px;border-radius:6px;
+}
+.kx-rank li{
+  display:flex;align-items:center;gap:12px;padding:9px 0;
+  border-bottom:1px dashed #29313e;font-size:13.6px;
+}
+.kx-rank li:last-child{border-bottom:0;}
+.kx-rank-no{
+  width:22px;height:22px;flex:0 0 auto;border-radius:7px;
+  display:grid;place-items:center;font-size:12px;font-weight:900;
+  background:#262f3c;color:#a9b7c8;
+}
+.kx-rank li:nth-child(1) .kx-rank-no{background:var(--kx-accent);color:#fff;}
+.kx-rank li:nth-child(2) .kx-rank-no{background:var(--kx-amber);color:#241a05;}
+.kx-rank li:nth-child(3) .kx-rank-no{background:#3c5a7a;color:#fff;}
+.kx-rank-title{flex:1 1 auto;color:#d6dfea;}
+.kx-rank-val{color:var(--kx-accent2);font-size:12.5px;font-weight:800;}
+
+/* ===== 动态 ===== */
+.kx-news{position:relative;padding-left:22px;}
+.kx-news::before{
+  content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--kx-accent),transparent);
+}
+.kx-news-item{position:relative;padding:0 0 24px 4px;}
+.kx-news-item::before{
+  content:"";position:absolute;left:-22px;top:7px;width:12px;height:12px;
+  border-radius:50%;background:var(--kx-bg2);border:2px solid var(--kx-accent);
+}
+.kx-news-date{font-size:12.2px;color:var(--kx-amber);font-weight:800;letter-spacing:.5px;}
+.kx-news-item h3{font-size:15.6px;margin:3px 0 5px;}
+.kx-news-item p{font-size:13.3px;color:var(--kx-muted);margin:0;}
+
+/* ===== FAQ ===== */
+.kx-faq{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.kx-faq details{
+  background:var(--kx-card);border:1px solid var(--kx-line);
+  border-radius:12px;padding:14px 17px;transition:.2s;
+}
+.kx-faq details[open]{border-color:#3f4d61;background:#1e2632;}
+.kx-faq summary{
+  cursor:pointer;font-size:14.6px;font-weight:800;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.kx-faq summary::-webkit-details-marker{display:none;}
+.kx-faq summary::after{content:"+";color:var(--kx-accent);font-size:20px;font-weight:400;line-height:1;}
+.kx-faq details[open] summary::after{content:"−";}
+.kx-faq details p{font-size:13.5px;color:var(--kx-muted);margin:10px 0 0;}
+
+/* ===== 联系/投稿 ===== */
+.kx-cta{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;
+  background:
+    radial-gradient(600px 260px at 90% 0%,rgba(255,90,60,.2),transparent 60%),
+    linear-gradient(160deg,#1d242f,#141922);
+  border:1px solid var(--kx-line);border-radius:20px;padding:36px;
+}
+.kx-cta h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:12px;}
+.kx-cta p{color:var(--kx-muted);font-size:14.6px;margin-bottom:8px;}
+.kx-cta-form{display:flex;flex-direction:column;gap:11px;}
+.kx-cta-form input,.kx-cta-form textarea{
+  background:#12171e;border:1px solid var(--kx-line);border-radius:11px;
+  padding:11px 14px;color:var(--kx-text);font-size:14px;outline:none;
+  font-family:inherit;transition:.2s;
+}
+.kx-cta-form input:focus,.kx-cta-form textarea:focus{border-color:var(--kx-accent);}
+.kx-cta-form textarea{resize:vertical;min-height:78px;}
+
+/* ===== 页脚 ===== */
+.kx-footer{background:#0b0e13;border-top:1px solid var(--kx-line);padding:46px 0 26px;}
+.kx-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;}
+.kx-footer h4{font-size:14.5px;color:#fff;margin-bottom:13px;}
+.kx-footer li{font-size:13.3px;color:#8b99ab;padding:5px 0;}
+.kx-footer li a:hover{color:var(--kx-accent2);}
+.kx-footer-brand p{font-size:13.3px;color:#8b99ab;margin-top:12px;max-width:300px;}
+.kx-footer-bottom{
+  margin-top:32px;padding-top:18px;border-top:1px solid #1c232d;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12.5px;color:#6d7b8c;
+}
+.kx-filing{color:#7d8b9d;}
+.kx-filing a{color:#8b99ab;}
+.kx-filing a:hover{color:var(--kx-accent2);}
+
+/* ===== 回顶 / Toast ===== */
+.kx-top{
+  position:fixed;right:22px;bottom:26px;z-index:90;
+  width:46px;height:46px;border-radius:13px;
+  background:linear-gradient(135deg,#ff5a3c,#ff8a3c);color:#fff;
+  font-size:19px;display:grid;place-items:center;
+  box-shadow:0 12px 28px rgba(255,90,60,.4);
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.kx-top.is-show{opacity:1;pointer-events:auto;}
+.kx-top:hover{transform:translateY(-3px);}
+.kx-toast{
+  position:fixed;left:50%;bottom:40px;transform:translate(-50%,20px);
+  background:#232c39;color:#eaf0f7;border:1px solid #3a465a;
+  padding:11px 22px;border-radius:12px;font-size:14px;font-weight:700;
+  z-index:120;opacity:0;pointer-events:none;transition:.3s;
+  box-shadow:0 14px 34px rgba(0,0,0,.5);
+}
+.kx-toast.is-show{opacity:1;transform:translate(-50%,0);}
+
+/* ===== 弹窗 ===== */
+.kx-modal{
+  position:fixed;inset:0;z-index:110;display:none;
+  align-items:center;justify-content:center;padding:22px;
+  background:rgba(6,9,13,.72);backdrop-filter:blur(4px);
+}
+.kx-modal.is-open{display:flex;}
+.kx-modal-box{
+  width:min(520px,100%);background:#1a212b;border:1px solid #35404f;
+  border-radius:18px;padding:26px;position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,.65);
+  animation:kxIn .25s ease;
+}
+@keyframes kxIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.kx-modal-box h3{font-size:19px;margin-bottom:8px;}
+.kx-modal-box p{font-size:14px;color:var(--kx-muted);}
+.kx-modal-close{
+  position:absolute;right:14px;top:12px;font-size:22px;color:#8b99ab;
+}
+.kx-modal-close:hover{color:#fff;}
+.kx-modal-box .kx-btn{margin-top:8px;}
+.kx-author-info{display:flex;gap:14px;align-items:center;margin:14px 0;}
+.kx-author-info .kx-creator-ava{margin:0;width:58px;height:58px;font-size:22px;}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .kx-hero-grid{grid-template-columns:1fr;gap:38px;}
+  .kx-hero-visual{max-width:600px;}
+  .kx-focus-grid{grid-template-columns:1fr 1fr;}
+  .kx-focus-feature{grid-column:span 2;}
+  .kx-video-grid{grid-template-columns:1fr 1fr;}
+  .kx-topic-grid{grid-template-columns:1fr 1fr;}
+  .kx-creator-grid{grid-template-columns:1fr 1fr;}
+  .kx-review-grid{grid-template-columns:1fr 1fr;}
+  .kx-rank-grid{grid-template-columns:1fr;}
+  .kx-about-grid{grid-template-columns:1fr;gap:30px;}
+  .kx-footer-grid{grid-template-columns:1fr 1fr;}
+  .kx-wall{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:820px){
+  :root{--kx-sticky:100px;}
+  .kx-nav{
+    position:absolute;left:0;right:0;top:100%;
+    background:#11161d;border-bottom:1px solid var(--kx-line);
+    flex-direction:column;align-items:stretch;gap:2px;
+    padding:10px 16px 16px;display:none;flex-basis:auto;
+  }
+  .kx-nav.is-open{display:flex;}
+  .kx-toggle{display:block;}
+  .kx-header-inner{position:relative;flex-wrap:wrap;gap:12px;}
+  .kx-head-tools{margin-left:auto;}
+  .kx-search input{width:110px;}
+  .kx-faq{grid-template-columns:1fr;}
+  .kx-cta{grid-template-columns:1fr;padding:26px;}
+  .kx-hero-stats{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  :root{--kx-sticky:96px;}
+  .kx-section{padding:44px 0;}
+  .kx-hero-grid{padding:38px 0 48px;}
+  .kx-focus-grid,.kx-video-grid,.kx-topic-grid,.kx-creator-grid,.kx-review-grid{grid-template-columns:1fr;}
+  .kx-focus-feature{grid-column:span 1;}
+  .kx-wall{grid-template-columns:1fr 1fr;grid-auto-rows:120px;}
+  .kx-wall-big{grid-column:span 2;grid-row:span 1;}
+  .kx-footer-grid{grid-template-columns:1fr;gap:22px;}
+  .kx-head-tools .kx-btn-primary{display:none;}
+  .kx-search{flex:1 1 auto;}
+  .kx-search input{width:100%;}
+  .kx-hero-float{display:none;}
+  .kx-notice-text{font-size:12.5px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶：公告条 + 页头 ===== -->
+<div class="kx-sticky-zone">
+  <div class="kx-notice" id="kxNotice">
+    <div class="kx-wrap kx-notice-inner">
+      <span class="kx-notice-tag">官方发布</span>
+      <div class="kx-notice-text">
+        <b>11 月 19 日新增：</b>《城市回声》第 12 期线索影像上线 ｜ 「真相档案」专题开放报名与上传通道 ｜ 新人创作者扶持计划第三批名单公布
+      </div>
+      <button class="kx-notice-close" type="button" aria-label="关闭公告" onclick="kxCloseNotice()">×</button>
+    </div>
+  </div>
+
+  <header class="kx-header">
+    <div class="kx-wrap kx-header-inner">
+      <a class="kx-brand" href="#kx-top" aria-label="911爆料免费版首页">
+        <div class="kx-brand-mark">911</div>
+        <div>
+          <div class="kx-brand-name">911爆料免费版</div>
+          <div class="kx-brand-sub">真实记录 · 官方品牌</div>
+        </div>
+      </a>
+      <nav class="kx-nav" id="kxNav" aria-label="主导航">
+        <a href="#kx-hero" class="is-active">首页</a>
+        <a href="#kx-focus">焦点影像</a>
+        <a href="#kx-topics">专题企划</a>
+        <a href="#kx-creators">创作者</a>
+        <a href="#kx-rank">数据榜单</a>
+        <a href="#kx-news">企业动态</a>
+        <a href="#kx-faq">帮助中心</a>
+        <a href="#kx-contact">联系投稿</a>
+      </nav>
+      <div class="kx-head-tools">
+        <div class="kx-search">
+          <span class="kx-search-ico" aria-hidden="true">⌕</span>
+          <input type="search" id="kxSearch" placeholder="搜线索 / 专题 / 创作者" aria-label="站内搜索">
+        </div>
+        <span class="kx-search-feedback" id="kxSearchFb" role="status" aria-live="polite"></span>
+        <button class="kx-btn kx-btn-primary" type="button" onclick="kxOpenModal('kxModalSubmit')">我要投稿</button>
+        <button class="kx-toggle" type="button" id="kxNavToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="kx-top">
+
+  <!-- ===== 首屏 ===== -->
+  <section class="kx-hero" id="kx-hero">
+    <div class="kx-wrap kx-hero-grid">
+      <div>
+        <div class="kx-kicker"><i class="kx-dot"></i>官方网站 · 持续运营内容生态</div>
+        <h1>911爆料免费版</h1>
+        <p class="kx-hero-lead">把散落的线索，变成可被记录、可被追踪、可被讨论的影像。</p>
+        <p class="kx-hero-desc">
+          911爆料免费版是面向公众的真实记录类视频社区与企业级内容平台。作为持续运营的官方网站，我们围绕线索影像、深度追踪、人物访谈与在地探索，构建高品质、原创、正版的精品内容生态，让每一次拍摄、每一段转述，都拥有被认真对待的位置。
+        </p>
+        <div class="kx-hero-actions">
+          <a class="kx-btn kx-btn-primary" href="#kx-focus">浏览本期焦点</a>
+          <a class="kx-btn kx-btn-ghost" href="#kx-about">了解品牌故事</a>
+          <button class="kx-btn kx-btn-ghost" type="button" onclick="kxOpenModal('kxModalSubmit')">上传线索素材</button>
+        </div>
+        <div class="kx-hero-stats">
+          <div class="kx-stat">
+            <div class="kx-stat-num" data-count="128600">128600<small>+</small></div>
+            <div class="kx-stat-label">创作者与记录者</div>
+          </div>
+          <div class="kx-stat">
+            <div class="kx-stat-num" data-count="9420">9420<small>+</small></div>
+            <div class="kx-stat-label">原创影像条目</div>
+          </div>
+          <div class="kx-stat">
+            <div class="kx-stat-num" data-count="36">36<small>城</small></div>
+            <div class="kx-stat-label">覆盖记录网络</div>
+          </div>
+        </div>
+      </div>
+      <div class="kx-hero-visual">
+        <div class="kx-hero-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23101822'/%3E%3Cstop offset='.55' stop-color='%23323f52'/%3E%3Cstop offset='1' stop-color='%23ff5a3c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='1000' fill='url(%23g1)'/%3E%3Ccircle cx='1180' cy='300' r='200' fill='%23ff8a3c' opacity='.28'/%3E%3Ccircle cx='420' cy='720' r='280' fill='%232ee6c5' opacity='.13'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.22' stroke-width='3'%3E%3Cpath d='M0 760 L360 560 L620 690 L980 430 L1380 610 L1600 500'/%3E%3Cpath d='M0 820 L300 700 L640 780 L1020 560 L1360 720 L1600 640'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.85'%3E%3Ccircle cx='980' cy='430' r='13'/%3E%3Ccircle cx='620' cy='690' r='10'/%3E%3C/g%3E%3Crect x='120' y='130' width='300' height='56' rx='28' fill='%23ff5a3c' opacity='.9'/%3E%3Ctext x='160' y='168' font-family='sans-serif' font-size='30' font-weight='bold' fill='%23fff'%3ECLUE 012%3C/text%3E%3C/svg%3E" alt="911爆料免费版首屏主视觉：城市天际线与线索路径的抽象影像封面">
+          <div class="kx-live"><i></i>线索追踪中</div>
+        </div>
+        <div class="kx-hero-float">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230c1a1a'/%3E%3Cstop offset='1' stop-color='%232ee6c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g2)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.5' stroke-width='4' fill='none'%3E%3Crect x='240' y='180' width='1120' height='540' rx='26'/%3E%3Cpath d='M700 330 L940 450 L700 570 Z' fill='%23ffffff' fill-opacity='.9' stroke='none'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.35'%3E%3Ccircle cx='330' cy='700' r='9'/%3E%3Ccircle cx='1280' cy='220' r='7'/%3E%3C/g%3E%3C/svg%3E" alt="911爆料免费版线索视频工作站界面示意封面">
+          <span>线索工作站 · 影像整理实时画面</span>
+        </div>
+        <div class="kx-hero-badge">官方 · 正版</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 深度解析 ===== -->
+  <section class="kx-section" id="kx-about">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>关于 911爆料免费版</h2>
+          <p class="kx-sec-sub">一个以真实记录为底色的视频品牌官网：我们谈定位、谈方法论，也谈为什么值得被信赖。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-news">查看企业动态 →</a>
+      </div>
+
+      <div class="kx-about-grid">
+        <aside class="kx-about-card">
+          <h3>品牌速览</h3>
+          <p>911爆料免费版由内容团队与影像工作室共同运营，聚焦线索型记录内容的采集、核验与呈现。</p>
+          <ul class="kx-about-list">
+            <li><b>定位</b><span>真实记录类视频社区与企业官网</span></li>
+            <li><b>内容</b><span>线索影像、深度追踪、人物访谈、在地探索</span></li>
+            <li><b>原则</b><span>先核验，再呈现；用户至上，尊重当事人</span></li>
+            <li><b>规模</b><span>36 城记录网络，128600+ 创作者</span></li>
+            <li><b>更新</b><span>每日 09:00 / 21:00 两档内容上新</span></li>
+          </ul>
+        </aside>
+
+        <div class="kx-about-body">
+          <h3>我们如何理解“爆料”这件事</h3>
+          <p>
+            在 911爆料免费版的语境里，“爆料”不是围观，而是一种带着责任的记录。一条线索从出现到被理解，中间需要被拍摄、被核实、被补充上下文、被放进更完整的时间线。我们把这套过程做成产品，也做成一档持续更新的内容生态：创作者上传素材，编辑团队进行事实核验与信息补全，最终以影像、图文、访谈、时间轴等形式发布在官方网站上。因此，平台上的每一条精品内容，都附有可回溯的线索来源说明与更新记录。
+          </p>
+          <p>
+            作为深耕真实记录这一垂直领域的品牌，我们并不追求最快的速度，而更在意“准确的温度”。视频是载体，<strong>真实</strong>是底线，<strong>陪伴</strong>是态度。我们相信，一个人愿意举起手机记录身边发生的事，本质上是一种对公共生活的参与；而一个平台愿意为这些影像负责，是企业的社会责任。
+          </p>
+
+          <h3>内容生态是怎么运转的</h3>
+          <p>
+            整个内容生态由四个角色共同构成：<strong>记录者</strong>负责拍摄与叙述，<strong>核验者</strong>负责比对多方信息，<strong>编辑者</strong>负责把素材整理成有观看价值的结构，<strong>社区用户</strong>则在评论区补充亲历视角、提供后续线索。四者之间形成闭环：今天被指出的一处偏差，会成为明天内容标准的更新依据。我们认为，这种<strong>持续运营</strong>的能力，才是一个视频品牌能够长期被<strong>值得信赖</strong>的原因。
+          </p>
+          <p>
+            “免费版”三个字对我们是承诺：核心的浏览、检索、评论、投稿与下载公开素材功能长期开放，用户不需要为获取认知而付费。同时，我们通过企业合作、品牌企划与内容授权维持平台的正常运转，把商业收益反哺到核验与制作环节，确保内容品质与<strong>专业</strong>度。
+          </p>
+
+          <h3>为什么选择影像，而不是纯文字</h3>
+          <p>
+            文字擅长结论，影像擅长细节。很多线索之所以被误读，恰恰是因为缺少画面里的那几秒钟：一个转身、一段环境音、一次迟疑。911爆料免费版把影像作为第一叙述语言，并配套提供时间轴、地点标注与多方对照视角，让观看者可以在更完整的语境里形成自己的判断。<strong>多元</strong>与<strong>包容</strong>在这里不是口号，而是我们刻意保留的“未删减部分”。
+          </p>
+          <p>
+            我们同样重视创作者成长。平台设有新人扶持计划、脚本工坊、剪辑公开课与季度挑战赛，帮助第一次拍摄的人把素材变成作品。从 2021 年至今，已有超过 2.6 万名记录者通过平台完成了自己的第一条正式发布。对品牌而言，这是<strong>影响力</strong>；对个体而言，这是一次被看见的<strong>成长</strong>。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 焦点影像 ===== -->
+  <section class="kx-section" id="kx-focus">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>本期焦点影像</h2>
+          <p class="kx-sec-sub">编辑团队本周重点推荐的两条主线与四则侧记，全部来自 911爆料免费版官方发布渠道。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-videos">进入视频流 →</a>
+      </div>
+
+      <div class="kx-focus-grid">
+        <article class="kx-vcard kx-focus-feature">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23151b26'/%3E%3Cstop offset='.6' stop-color='%234a2a2a'/%3E%3Cstop offset='1' stop-color='%23ffcb45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23f1)'/%3E%3Cg stroke='%23ffcb45' stroke-opacity='.5' stroke-width='4' fill='none'%3E%3Cpath d='M120 720 Q400 380 760 560 T1480 300'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.9'%3E%3Ccircle cx='400' cy='470' r='14'/%3E%3Ccircle cx='760' cy='560' r='11'/%3E%3Ccircle cx='1140' cy='400' r='17'/%3E%3C/g%3E%3Ctext x='120' y='180' font-family='sans-serif' font-size='54' font-weight='bold' fill='%23ffffff'%3E夜行记录%3C/text%3E%3C/svg%3E" alt="焦点影像《夜行记录》：凌晨两点城市街区的线索追踪封面">
+            <span class="kx-thumb-tag">焦点主线</span>
+            <span class="kx-thumb-time">24:18</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">夜行记录：凌晨两点，谁在整理这座城市的线索</h3>
+            <p class="kx-vcard-excerpt">跟随三位记录者穿过便利店、天桥与夜间维修班，还原一条街道在深夜里的真实秩序。影片使用双机位跟拍，并附有完整时间轴与地点说明。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#ffcb45">夜</span>
+              <span>记录者 · 夜行小林</span>
+              <span>· 11 月 18 日</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">3264</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('夜行记录：凌晨两点，谁在整理这座城市的线索')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%230f2731'/%3E%3Cg fill='%232ee6c5' opacity='.75'%3E%3Crect x='140' y='600' width='120' height='180'/%3E%3Crect x='320' y='480' width='120' height='300'/%3E%3Crect x='500' y='360' width='120' height='420'/%3E%3Crect x='680' y='540' width='120' height='240'/%3E%3Crect x='860' y='420' width='120' height='360'/%3E%3Crect x='1040' y='300' width='120' height='480'/%3E%3Crect x='1220' y='620' width='120' height='160'/%3E%3C/g%3E%3Ccircle cx='1310' cy='210' r='90' fill='%23ffcb45' opacity='.8'/%3E%3C/svg%3E" alt="影像《数据里的异常值》：城市数据柱状图与线索比对封面">
+            <span class="kx-thumb-tag">深度追踪</span>
+            <span class="kx-thumb-time">18:42</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">数据里的异常值：一份公开报表如何被逐条核验</h3>
+            <p class="kx-vcard-excerpt">从一条读者私信出发，编辑部用三周时间还原一份报表的统计口径。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#2ee6c5">核</span>
+              <span>核验组 · 阿岚</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1877</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('数据里的异常值')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%232a1f2e'/%3E%3Cg fill='none' stroke='%23ff8a3c' stroke-width='6' opacity='.8'%3E%3Ccircle cx='800' cy='450' r='240'/%3E%3Ccircle cx='800' cy='450' r='150'/%3E%3C/g%3E%3Cpath d='M800 210 L800 690 M560 450 L1040 450' stroke='%23ffffff' stroke-opacity='.4' stroke-width='4'/%3E%3C/svg%3E" alt="影像《一扇门的四次开合》：社区门禁与邻里关系线索封面">
+            <span class="kx-thumb-tag">人物访谈</span>
+            <span class="kx-thumb-time">15:07</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">一扇门的四次开合：和物业师傅聊了两小时</h3>
+            <p class="kx-vcard-excerpt">关于门禁、维修与邻里沟通，一场没有剧本的对话。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#ff8a3c">访</span>
+              <span>访谈组 · 苏合</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1132</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('一扇门的四次开合')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23132017'/%3E%3Cg fill='%234fae7a' opacity='.85'%3E%3Cpath d='M0 700 L200 620 L400 660 L600 560 L800 610 L1000 520 L1200 590 L1400 500 L1600 560 L1600 900 L0 900 Z'/%3E%3C/g%3E%3Ccircle cx='1240' cy='250' r='80' fill='%23ffcb45' opacity='.85'/%3E%3C/svg%3E" alt="影像《河岸第七公里》：河道巡护与在地探索线索封面">
+            <span class="kx-thumb-tag">在地探索</span>
+            <span class="kx-thumb-time">21:33</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">河岸第七公里：巡护员的一天与被忽略的岸线</h3>
+            <p class="kx-vcard-excerpt">清晨五点半出发，沿河岸记录垃圾分布与鸟类栖息的变化。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#4fae7a">岸</span>
+              <span>在地组 · 江野</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">984</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('河岸第七公里')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23202028'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.28' stroke-width='3' fill='none'%3E%3Cpath d='M0 300 H1600 M0 500 H1600 M0 700 H1600'/%3E%3Cpath d='M300 0 V900 M700 0 V900 M1100 0 V900'/%3E%3C/g%3E%3Crect x='620' y='330' width='360' height='220' rx='16' fill='%23ff5a3c' opacity='.85'/%3E%3C/svg%3E" alt="影像《档案室里的三小时》：旧资料归档与核验流程封面">
+            <span class="kx-thumb-tag">创作幕后</span>
+            <span class="kx-thumb-time">12:56</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">档案室里的三小时：一条影像从素材到发布的路径</h3>
+            <p class="kx-vcard-excerpt">拆解核验流程、镜头取舍与授权确认的完整工作流。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#ff5a3c">编</span>
+              <span>编辑部 · 老周</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1420</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('档案室里的三小时')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%231d1626'/%3E%3Cg fill='%23b98cff' opacity='.7'%3E%3Ccircle cx='300' cy='260' r='120'/%3E%3Ccircle cx='760' cy='520' r='180'/%3E%3Ccircle cx='1240' cy='320' r='140'/%3E%3C/g%3E%3Cpath d='M200 780 Q800 480 1400 780' stroke='%23ffffff' stroke-width='5' fill='none' opacity='.5'/%3E%3C/svg%3E" alt="影像《光斑地图》：夜间灯光分布与街区安全线索封面">
+            <span class="kx-thumb-tag">经验分享</span>
+            <span class="kx-thumb-time">16:21</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">光斑地图：怎样用手机拍出可用的夜间线索画面</h3>
+            <p class="kx-vcard-excerpt">从曝光、收音到取证式构图，一份面向新手的实用技巧清单。</p>
+            <div class="kx-vcard-meta">
+              <span class="kx-avatar" style="background:#b98cff">光</span>
+              <span>教程组 · 小满</span>
+            </div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">2109</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('光斑地图')">分享</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 视频流 ===== -->
+  <section class="kx-section" id="kx-videos">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>社区视频流</h2>
+          <p class="kx-sec-sub">按题材筛选你关心的记录方向，所有内容均经平台核验后发布。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-rank">查看热度榜 →</a>
+      </div>
+
+      <div class="kx-filter-row" id="kxFilterRow">
+        <button class="kx-chip is-on" type="button" data-filter="all">全部</button>
+        <button class="kx-chip" type="button" data-filter="追踪">深度追踪</button>
+        <button class="kx-chip" type="button" data-filter="教程">教程干货</button>
+        <button class="kx-chip" type="button" data-filter="访谈">人物访谈</button>
+        <button class="kx-chip" type="button" data-filter="在地">在地探索</button>
+        <button class="kx-chip" type="button" data-filter="评测">深度测评</button>
+      </div>
+
+      <div class="kx-video-grid" id="kxVideoGrid">
+        <article class="kx-vcard" data-tag="追踪">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%230c1620'/%3E%3Cg stroke='%23ff5a3c' stroke-width='5' fill='none' opacity='.8'%3E%3Cpath d='M100 800 L400 500 L700 620 L1000 320 L1300 480 L1500 260'/%3E%3C/g%3E%3Cg fill='%23ffcb45'%3E%3Ccircle cx='400' cy='500' r='12'/%3E%3Ccircle cx='1000' cy='320' r='12'/%3E%3C/g%3E%3C/svg%3E" alt="视频《涨潮之后》封面：沿海街区水位痕迹">
+            <span class="kx-thumb-tag">深度追踪</span>
+            <span class="kx-thumb-time">19:04</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">涨潮之后：一条沿海老街的水位记录</h3>
+            <p class="kx-vcard-excerpt">三年间同一机位拍摄，拼接出街面与住户门口的水痕变化。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#ff5a3c">潮</span><span>记录者 · 阿潮</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">862</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('涨潮之后')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard" data-tag="教程">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23141c2a'/%3E%3Cg fill='none' stroke='%232ee6c5' stroke-width='4'%3E%3Crect x='300' y='220' width='1000' height='460' rx='20'/%3E%3Cpath d='M700 340 L940 450 L700 560 Z' fill='%232ee6c5' fill-opacity='.6' stroke='none'/%3E%3C/g%3E%3Cg fill='%23ffcb45'%3E%3Crect x='300' y='760' width='220' height='22' rx='11'/%3E%3Crect x='560' y='760' width='120' height='22' rx='11'/%3E%3C/g%3E%3C/svg%3E" alt="视频《三条轨道剪辑法》封面：时间线剪辑界面">
+            <span class="kx-thumb-tag">教程干货</span>
+            <span class="kx-thumb-time">11:26</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">三条轨道剪辑法：让线索视频拥有清晰叙事</h3>
+            <p class="kx-vcard-excerpt">画面轨、环境音轨、说明字幕轨，用最简单的方式组织复杂素材。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#2ee6c5">剪</span><span>教程组 · 丁一</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1543</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('三条轨道剪辑法')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard" data-tag="访谈">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23221c18'/%3E%3Cg fill='%23ffcb45' opacity='.9'%3E%3Ccircle cx='560' cy='420' r='110'/%3E%3Ccircle cx='1040' cy='420' r='110'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.85'%3E%3Crect x='420' y='620' width='280' height='120' rx='60'/%3E%3Crect x='900' y='620' width='280' height='120' rx='60'/%3E%3C/g%3E%3C/svg%3E" alt="视频《对面的两个人》封面：访谈双人剪影">
+            <span class="kx-thumb-tag">人物访谈</span>
+            <span class="kx-thumb-time">27:48</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">对面的两个人：一场持续十四年的邻里协商</h3>
+            <p class="kx-vcard-excerpt">关于采光、噪音与楼道空间，两位当事人首次同框叙述。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#ffcb45">谈</span><span>访谈组 · 洛川</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">2310</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('对面的两个人')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard" data-tag="在地">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23112619'/%3E%3Cg fill='%234fae7a' opacity='.8'%3E%3Cpath d='M0 640 L260 540 L520 600 L820 480 L1120 570 L1400 470 L1600 540 L1600 900 L0 900 Z'/%3E%3C/g%3E%3Ccircle cx='1300' cy='220' r='70' fill='%23ffcb45'/%3E%3C/svg%3E" alt="视频《菜市收摊手记》封面：清晨菜市场摊位">
+            <span class="kx-thumb-tag">在地探索</span>
+            <span class="kx-thumb-time">14:12</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">菜市收摊手记：八点半之后的另一种秩序</h3>
+            <p class="kx-vcard-excerpt">跟踪三位摊主收摊流程，记录一条菜市场的每日循环。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#4fae7a">市</span><span>在地组 · 米饭</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1377</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('菜市收摊手记')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard" data-tag="评测">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23172030'/%3E%3Cg fill='none' stroke='%23ff8a3c' stroke-width='5'%3E%3Crect x='260' y='260' width='480' height='380' rx='20'/%3E%3Crect x='860' y='260' width='480' height='380' rx='20'/%3E%3C/g%3E%3Cpath d='M260 470 H740 M860 470 H1340' stroke='%23ffffff' stroke-opacity='.4' stroke-width='3'/%3E%3C/svg%3E" alt="视频《两台记录仪横评》封面：设备对比测试">
+            <span class="kx-thumb-tag">深度测评</span>
+            <span class="kx-thumb-time">22:35</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">两台记录仪横评：夜拍、续航与收音的真实差距</h3>
+            <p class="kx-vcard-excerpt">同一场景、同一时段，逐项对比四项核心指标的差异。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#ff8a3c">测</span><span>测评组 · 老蒋</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1902</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('两台记录仪横评')">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kx-vcard" data-tag="追踪">
+          <div class="kx-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%231a1420'/%3E%3Cg fill='%23b98cff' opacity='.75'%3E%3Crect x='200' y='300' width='140' height='360' rx='14'/%3E%3Crect x='420' y='220' width='140' height='440' rx='14'/%3E%3Crect x='640' y='380' width='140' height='280' rx='14'/%3E%3Crect x='860' y='260' width='140' height='400' rx='14'/%3E%3C/g%3E%3Ccircle cx='1240' cy='440' r='140' fill='%23ff5a3c' opacity='.7'/%3E%3C/svg%3E" alt="视频《空置店铺记录》封面：街区空置店面统计">
+            <span class="kx-thumb-tag">深度追踪</span>
+            <span class="kx-thumb-time">17:09</span>
+            <span class="kx-play"><i>▶</i></span>
+          </div>
+          <div class="kx-vcard-body">
+            <h3 class="kx-vcard-title">空置店铺记录：一条商业街的三年招牌变化</h3>
+            <p class="kx-vcard-excerpt">用固定机位比对招牌更换频率，呈现街区经营的真实节奏。</p>
+            <div class="kx-vcard-meta"><span class="kx-avatar" style="background:#b98cff">街</span><span>记录者 · 陈默</span></div>
+            <div class="kx-vcard-actions">
+              <button class="kx-act" type="button" data-like onclick="kxLike(this)">点赞 <span class="kx-like-num">1120</span></button>
+              <button class="kx-act" type="button" onclick="kxSave(this)">收藏</button>
+              <button class="kx-act" type="button" onclick="kxCopy('空置店铺记录')">分享</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 专题企划 ===== -->
+  <section class="kx-section" id="kx-topics">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>专题企划</h2>
+          <p class="kx-sec-sub">以季度为单位的深度企划，每条专题均开放线索征集与社区投票。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-contact">提交专题提案 →</a>
+      </div>
+
+      <div class="kx-topic-grid">
+        <article class="kx-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%231b2a3a'/%3E%3Cg fill='%232ee6c5' opacity='.55'%3E%3Cpath d='M0 640 Q300 480 600 560 T1200 460 L1200 800 L0 800 Z'/%3E%3C/g%3E%3Cg fill='%23ffcb45'%3E%3Ccircle cx='300' cy='240' r='16'/%3E%3Ccircle cx='880' cy='200' r='12'/%3E%3C/g%3E%3C/svg%3E" alt="专题《真相档案》封面：多线索引擎界面">
+          <div class="kx-topic-body">
+            <span class="kx-topic-status kx-status-live">征集中</span>
+            <h3>真相档案 · 第二季</h3>
+            <p>面向公众征集 2024 年以来的待澄清线索，核验后以影像档案形式发布。</p>
+          </div>
+        </article>
+
+        <article class="kx-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23241a2c'/%3E%3Cg fill='%23ff8a3c' opacity='.7'%3E%3Ccircle cx='360' cy='380' r='150'/%3E%3Ccircle cx='840' cy='380' r='150'/%3E%3C/g%3E%3Crect x='420' y='300' width='360' height='160' rx='80' fill='%23ffffff' opacity='.2'/%3E%3C/svg%3E" alt="专题《城市回声》封面：城市声波与街区轮廓">
+          <div class="kx-topic-body">
+            <span class="kx-topic-status kx-status-soon">12 月上线</span>
+            <h3>城市回声 · 声音地图</h3>
+            <p>收录 36 座城市的清晨环境音，配套创作者解说与在地文化访谈。</p>
+          </div>
+        </article>
+
+        <article class="kx-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23131f1a'/%3E%3Cg stroke='%234fae7a' stroke-width='5' fill='none' opacity='.8'%3E%3Cpath d='M100 660 L340 460 L600 560 L900 300 L1100 400'/%3E%3C/g%3E%3Ccircle cx='900' cy='300' r='18' fill='%23ffcb45'/%3E%3C/svg%3E" alt="专题《新人纪录计划》封面：成长曲线与镜头图标">
+          <div class="kx-topic-body">
+            <span class="kx-topic-status kx-status-done">已完结</span>
+            <h3>新人纪录计划 · 第三期</h3>
+            <p>18 位新人记录者的首个作品合集，含完整创作手记与剪辑思路拆解。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作者矩阵 ===== -->
+  <section class="kx-section" id="kx-creators">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>创作者矩阵</h2>
+          <p class="kx-sec-sub">他们来自不同城市与职业，用镜头把日常变成可被检索的记录。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-contact">申请入驻 →</a>
+      </div>
+
+      <div class="kx-creator-grid">
+        <article class="kx-creator">
+          <div class="kx-creator-ava" style="background:linear-gradient(135deg,#ffcb45,#ff8a3c)">夜</div>
+          <h3>夜行小林</h3>
+          <div class="kx-role">夜间记录 · 城市秩序</div>
+          <p>三年跟拍夜间工作者，擅长在低照度环境中完成稳定叙事。</p>
+          <div class="kx-creator-stats"><span><b>186</b> 作品</span><span><b>4.2万</b> 关注</span></div>
+          <button class="kx-mini-btn" type="button" onclick="kxOpenAuthor('夜行小林','夜间记录 · 城市秩序','三年跟拍夜间工作者，累计 186 条原创影像，代表作《夜行记录》系列。')">查看档案</button>
+        </article>
+
+        <article class="kx-creator">
+          <div class="kx-creator-ava" style="background:linear-gradient(135deg,#2ee6c5,#3f8fbf)">核</div>
+          <h3>核验组 · 阿岚</h3>
+          <div class="kx-role">事实核验 · 数据追踪</div>
+          <p>数据记者出身，专注公开信息比对与统计口径还原，作品以严谨著称。</p>
+          <div class="kx-creator-stats"><span><b>94</b> 作品</span><span><b>3.1万</b> 关注</span></div>
+          <button class="kx-mini-btn" type="button" onclick="kxOpenAuthor('核验组 · 阿岚','事实核验 · 数据追踪','数据记者出身，主导核验专题 21 期，建立了平台的多源比对标准。')">查看档案</button>
+        </article>
+
+        <article class="kx-creator">
+          <div class="kx-creator-ava" style="background:linear-gradient(135deg,#4fae7a,#2b7a55)">岸</div>
+          <h3>江野</h3>
+          <div class="kx-role">在地探索 · 自然记录</div>
+          <p>沿河岸行走十年，记录水岸生态与社区生活的缓慢变化。</p>
+          <div class="kx-creator-stats"><span><b>142</b> 作品</span><span><b>2.8万</b> 关注</span></div>
+          <button class="kx-mini-btn" type="button" onclick="kxOpenAuthor('江野','在地探索 · 自然记录','沿河岸行走十年，代表作《河岸第七公里》系列，坚持长周期定点拍摄。')">查看档案</button>
+        </article>
+
+        <article class="kx-creator">
+          <div class="kx-creator-ava" style="background:linear-gradient(135deg,#b98cff,#7a5bd6)">光</div>
+          <h3>小满</h3>
+          <div class="kx-role">实用教程 · 拍摄技巧</div>
+          <p>把复杂参数讲成大白话，专为第一次举起手机的人写教程。</p>
+          <div class="kx-creator-stats"><span><b>233</b> 作品</span><span><b>6.7万</b> 关注</span></div>
+          <button class="kx-mini-btn" type="button" onclick="kxOpenAuthor('小满','实用教程 · 拍摄技巧','教程类创作者，课程累计播放 512 万次，主张「先拍清楚，再拍好看」。')">查看档案</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 影像墙 ===== -->
+  <section class="kx-section" id="kx-wall">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>社区影像墙</h2>
+          <p class="kx-sec-sub">来自记录者的日常切片，按投稿时间实时更新。</p>
+        </div>
+        <span class="kx-sec-more">本周新增 64 幅</span>
+      </div>
+
+      <div class="kx-wall">
+        <figure class="kx-wall-item kx-wall-big">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%23121a24'/%3E%3Cg fill='%23ff5a3c' opacity='.7'%3E%3Ccircle cx='880' cy='260' r='110'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-opacity='.35' stroke-width='4' fill='none'%3E%3Cpath d='M0 700 L300 560 L600 640 L900 480 L1200 600'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《天桥下的晚高峰》">
+          <span>天桥下的晚高峰 · 投稿者 阿澈</span>
+        </figure>
+        <figure class="kx-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23222d1c'/%3E%3Ccircle cx='460' cy='120' r='60' fill='%23ffcb45'/%3E%3Cpath d='M0 320 L200 240 L400 300 L600 220 L600 400 L0 400 Z' fill='%234fae7a' opacity='.7'/%3E%3C/svg%3E" alt="影像墙作品《稻田边的第一班车》">
+          <span>稻田边的第一班车 · 投稿者 老莫</span>
+        </figure>
+        <figure class="kx-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%231c1a2a'/%3E%3Cg fill='%23b98cff' opacity='.75'%3E%3Ccircle cx='180' cy='200' r='70'/%3E%3Ccircle cx='380' cy='160' r='50'/%3E%3C/g%3E%3Crect x='240' y='260' width='140' height='90' rx='10' fill='%23ffffff' opacity='.2'/%3E%3C/svg%3E" alt="影像墙作品《深夜便利店的三号桌》">
+          <span>深夜便利店的三号桌 · 投稿者 木木</span>
+        </figure>
+        <figure class="kx-wall-item kx-wall-wide">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'%3E%3Crect width='1200' height='400' fill='%23101e28'/%3E%3Cg stroke='%232ee6c5' stroke-width='4' fill='none' opacity='.7'%3E%3Cpath d='M0 300 Q200 180 400 260 T800 200 T1200 280'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《雨停后的公交站台》">
+          <span>雨停后的公交站台 · 投稿者 汐</span>
+        </figure>
+        <figure class="kx-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%232b1f22'/%3E%3Cg fill='%23ff8a3c' opacity='.8'%3E%3Crect x='120' y='180' width='90' height='160' rx='8'/%3E%3Crect x='250' y='130' width='90' height='210' rx='8'/%3E%3Crect x='380' y='210' width='90' height='130' rx='8'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《旧楼加装电梯现场》">
+          <span>旧楼加装电梯现场 · 投稿者 陈工</span>
+        </figure>
+        <figure class="kx-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%2315202b'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.3' stroke-width='3' fill='none'%3E%3Cpath d='M0 200 H600 M300 0 V400'/%3E%3C/g%3E%3Ccircle cx='300' cy='200' r='80' fill='%23ff5a3c' opacity='.6'/%3E%3C/svg%3E" alt="影像墙作品《路口监控视角对照》">
+          <span>路口监控视角对照 · 投稿者 阿岑</span>
+        </figure>
+        <figure class="kx-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%231a2418'/%3E%3Cg fill='%237fd4a0' opacity='.7'%3E%3Cpath d='M0 320 L150 240 L300 290 L450 210 L600 280 L600 400 L0 400 Z'/%3E%3C/g%3E%3Ccircle cx='140' cy='120' r='50' fill='%23ffcb45' opacity='.85'/%3E%3C/svg%3E" alt="影像墙作品《山道上的巡线员》">
+          <span>山道上的巡线员 · 投稿者 川子</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 榜单 + 评价 ===== -->
+  <section class="kx-section" id="kx-rank">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>数据榜单与社区口碑</h2>
+          <p class="kx-sec-sub">榜单每周一更新，统计口径公开透明；评价来自真实注册用户。</p>
+        </div>
+        <span class="kx-sec-more">统计周期：11 月 11 日 — 11 月 18 日</span>
+      </div>
+
+      <div class="kx-rank-grid">
+        <div class="kx-rank">
+          <h3>热度榜 <em>本周</em></h3>
+          <ul>
+            <li><span class="kx-rank-no">1</span><span class="kx-rank-title">夜行记录：凌晨两点，谁在整理这座城市的线索</span><span class="kx-rank-val">9.8万</span></li>
+            <li><span class="kx-rank-no">2</span><span class="kx-rank-title">对面的两个人：一场持续十四年的邻里协商</span><span class="kx-rank-val">7.2万</span></li>
+            <li><span class="kx-rank-no">3</span><span class="kx-rank-title">光斑地图：怎样用手机拍出可用的夜间线索画面</span><span class="kx-rank-val">6.4万</span></li>
+            <li><span class="kx-rank-no">4</span><span class="kx-rank-title">两台记录仪横评：夜拍、续航与收音的真实差距</span><span class="kx-rank-val">5.9万</span></li>
+            <li><span class="kx-rank-no">5</span><span class="kx-rank-title">空置店铺记录：一条商业街的三年招牌变化</span><span class="kx-rank-val">5.1万</span></li>
+          </ul>
+        </div>
+
+        <div class="kx-rank">
+          <h3>新人榜 <em>新锐</em></h3>
+          <ul>
+            <li><span class="kx-rank-no">1</span><span class="kx-rank-title">南北 · 首作《凌晨四点的面包房》</span><span class="kx-rank-val">+2380</span></li>
+            <li><span class="kx-rank-no">2</span><span class="kx-rank-title">阿灯 · 首作《楼道灯坏了三个月》</span><span class="kx-rank-val">+1962</span></li>
+            <li><span class="kx-rank-no">3</span><span class="kx-rank-title">小岛 · 首作《轮渡上的二十分钟》</span><span class="kx-rank-val">+1744</span></li>
+            <li><span class="kx-rank-no">4</span><span class="kx-rank-title">老许 · 首作《修表摊的最后一个夏天》</span><span class="kx-rank-val">+1503</span></li>
+            <li><span class="kx-rank-no">5</span><span class="kx-rank-title">阿澜 · 首作《小区围墙的七处涂改》</span><span class="kx-rank-val">+1288</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kx-review-grid" style="margin-top:26px;">
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#ffcb45">周</span><div><div class="kx-review-name">周先生</div><div class="kx-review-tag">注册两年 · 深度用户</div></div></div>
+          <p>最打动我的是每条视频下面的来源说明。看多了信息碎片，这种把核验过程摊开来的做法很难得，也让我更愿意把它当作固定使用的官方网站。</p>
+          <div class="kx-stars">★★★★★</div>
+        </div>
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#2ee6c5">林</span><div><div class="kx-review-name">林一白</div><div class="kx-review-tag">创作者 · 在地记录</div></div></div>
+          <p>投稿流程比想象中顺畅，上传后三天就收到了编辑的核验反馈，连时间轴标注的错误都帮我指出来了。对新人来说，这种指导很实在。</p>
+          <div class="kx-stars">★★★★★</div>
+        </div>
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#b98cff">孟</span><div><div class="kx-review-name">孟小南</div><div class="kx-review-tag">注册八个月</div></div></div>
+          <p>教程区很有诚意，不是那种只讲机型的测评，而是教你画面怎么放、信息怎么交代清楚。看完立刻去楼下拍了一段。</p>
+          <div class="kx-stars">★★★★☆</div>
+        </div>
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#ff8a3c">老</span><div><div class="kx-review-name">老蒋</div><div class="kx-review-tag">创作者 · 设备测评</div></div></div>
+          <p>平台对素材授权的要求比较严格，前期沟通会多花点时间，但我认可这种谨慎。品质和口碑应该来自这样的细节，而不是标题党。</p>
+          <div class="kx-stars">★★★★★</div>
+        </div>
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#4fae7a">宋</span><div><div class="kx-review-name">宋小禾</div><div class="kx-review-tag">注册半年 · 社区活跃</div></div></div>
+          <p>评论区气氛相对理性，能看到有人补充亲历视角，也有人指出视频里的口误。这种讨论氛围在现在的平台里不多见，希望一直保持。</p>
+          <div class="kx-stars">★★★★★</div>
+        </div>
+        <div class="kx-review">
+          <div class="kx-review-top"><span class="kx-avatar" style="background:#3f8fbf">谢</span><div><div class="kx-review-name">谢迟</div><div class="kx-review-tag">新注册用户</div></div></div>
+          <p>专题企划的投票机制挺有意思，我投的那个选题真的在下一期上线了。虽然只是一个小功能，但让人感觉参与是有效的。</p>
+          <div class="kx-stars">★★★★☆</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 企业动态 ===== -->
+  <section class="kx-section" id="kx-news">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>企业动态与官方发布</h2>
+          <p class="kx-sec-sub">关于平台规则、功能更新与内容生态建设的最新说明。</p>
+        </div>
+      </div>
+      <div class="kx-news">
+        <div class="kx-news-item">
+          <div class="kx-news-date">2026 / 11 / 19</div>
+          <h3>「真相档案」第二季征集通道正式开放</h3>
+          <p>面向所有注册用户开放线索提交与素材上传，本期重点征集与公共空间使用相关的议题。核验进度以周报形式在专题页公示。</p>
+        </div>
+        <div class="kx-news-item">
+          <div class="kx-news-date">2026 / 11 / 12</div>
+          <h3>创作者扶持计划第三批名单公布，共 40 位记录者入选</h3>
+          <p>入选者将获得拍摄设备支持、剪辑课程与专属编辑对接。平台将持续投入内容生态建设，帮助更多新手完成第一条正式作品。</p>
+        </div>
+        <div class="kx-news-item">
+          <div class="kx-news-date">2026 / 11 / 05</div>
+          <h3>核验流程升级：新增多源比对与时间轴标注标准</h3>
+          <p>所有标注为“深度追踪”的内容，需至少完成三个独立信源的交叉比对，并在发布页附上核验说明。这是平台对内容品质的一次系统性提升。</p>
+        </div>
+        <div class="kx-news-item">
+          <div class="kx-news-date">2026 / 10 / 28</div>
+          <h3>季度挑战赛「我的街角三分钟」结果揭晓</h3>
+          <p>共收到 1,286 条投稿，12 部作品进入年度精选。评审团由编辑团队与社区代表共同组成，评选标准与得分明细已对外公开。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="kx-section" id="kx-faq">
+    <div class="kx-wrap">
+      <div class="kx-sec-head">
+        <div>
+          <h2 class="kx-sec-title"><span class="kx-bar"></span>帮助中心</h2>
+          <p class="kx-sec-sub">关于投稿、核验、授权与社区规则的常见问题。</p>
+        </div>
+        <a class="kx-sec-more" href="#kx-contact">仍有疑问？联系我们 →</a>
+      </div>
+      <div class="kx-faq">
+        <details open>
+          <summary>投稿后多久能收到核验反馈？</summary>
+          <p>常规线索一般在 3 个工作日内收到首次反馈；涉及多方比对的深度线索，最长不超过 7 个工作日。所有进度均可在个人中心查看。</p>
+        </details>
+        <details>
+          <summary>上传素材需要哪些授权文件？</summary>
+          <p>如画面中出现可识别的第三人，需提供口头或书面同意说明；涉及未成年人、私人住所的素材，平台会要求补充监护人或当事人授权。</p>
+        </details>
+        <details>
+          <summary>平台会修改我的原始素材吗？</summary>
+          <p>不会改动原始文件。发布版本会在保留原声的同时添加时间轴、地点与说明字幕；所有调整项会在编辑记录中列出，创作者可确认或拒绝。</p>
+        </details>
+        <details>
+          <summary>“免费版”具体指哪些功能免费？</summary>
+          <p>浏览、检索、评论、投稿、下载平台公开素材说明文档等功能长期免费。企业合作与内容授权是平台的主要收入来源，用于支持核验与制作成本。</p>
+        </details>
+        <details>
+          <summary>如何申请成为认证记录者？</summary>
+          <p>完成三条以上原创投稿并通过核验，即可在个人中心提交认证申请。认证审核会综合内容完成度、信息准确性与社区互动情况。</p>
+        </details>
+        <details>
+          <summary>发现内容存在问题，怎么反馈？</summary>
+          <p>可在视频页点击“反馈”按钮提交具体说明，或通过联系我们页面发送邮件。平台承诺 48 小时内响应，并对有效反馈公开处理结果。</p>
+        </details>
+        <details>
+          <summary>能否引用平台内容做二次创作？</summary>
+          <p>标注来源并保留原始水印的前提下，允许非商业引用；商业用途需通过内容授权通道申请，平台会协助联系原记录者取得许可。</p>
+        </details>
+        <details>
+          <summary>平台如何保护线索提供者？</summary>
+          <p>默认对提供者身份做脱敏处理，敏感画面会进行必要的遮挡与变声处理。涉及人身安全的线索，平台将优先评估风险后再决定是否发布。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 联系与投稿 ===== -->
+  <section class="kx-section" id="kx-contact">
+    <div class="kx-wrap">
+      <div class="kx-cta">
+        <div>
+          <h2>把你的线索，交给一个会认真核验的团队</h2>
+          <p>无论是三分钟的街角记录，还是一段持续数月的追踪，我们都愿意听你讲完。911爆料免费版官方网站长期开放投稿通道，也欢迎企业与机构洽谈内容合作。</p>
+          <p style="color:#ffcb45;font-weight:700;">合作邮箱：brand@911-clue.example ｜ 投稿咨询：9:00 — 21:00 在线</p>
+          <div class="kx-hero-actions" style="margin-top:16px;">
+            <button class="kx-btn kx-btn-primary" type="button" onclick="kxOpenModal('kxModalSubmit')">立即投稿</button>
+            <button class="kx-btn kx-btn-ghost" type="button" onclick="kxCopy('911爆料免费版 官方网站')">复制官网信息</button>
+          </div>
+        </div>
+        <form class="kx-cta-form" onsubmit="kxSubmitForm(event)">
+          <input type="text" name="name" placeholder="怎么称呼你" required>
+          <input type="text" name="contact" placeholder="联系方式（邮箱或手机号）" required>
+          <textarea name="msg" placeholder="简单描述你的线索或合作意向" required></textarea>
+          <button class="kx-btn kx-btn-primary" type="submit" style="justify-content:center;">提交信息</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="kx-footer">
+  <div class="kx-wrap">
+    <div class="kx-footer-grid">
+      <div class="kx-footer-brand">
+        <div class="kx-brand">
+          <div class="kx-brand-mark">911</div>
+          <div>
+            <div class="kx-brand-name">911爆料免费版</div>
+            <div class="kx-brand-sub">真实记录 · 官方品牌</div>
+          </div>
+        </div>
+        <p>911爆料免费版官方网站，深耕真实记录与线索影像的垂直领域，持续运营面向公众的高品质内容生态。</p>
+      </div>
+      <div>
+        <h4>内容入口</h4>
+        <ul>
+          <li><a href="#kx-focus">焦点影像</a></li>
+          <li><a href="#kx-videos">社区视频流</a></li>
+          <li><a href="#kx-topics">专题企划</a></li>
+          <li><a href="#kx-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#kx-about">品牌故事</a></li>
+          <li><a href="#kx-creators">创作者矩阵</a></li>
+          <li><a href="#kx-news">企业动态</a></li>
+          <li><a href="#kx-rank">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>支持与联系</h4>
+        <ul>
+          <li><a href="#kx-faq">帮助中心</a></li>
+          <li><a href="#kx-contact">投稿与合作</a></li>
+          <li>合作邮箱：brand@911-clue.example</li>
+          <li>服务时间：每日 9:00 — 21:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="kx-footer-bottom">
+      <div class="kx-filing">© 2026 911爆料免费版 官方网站 版权所有 · 持续运营中 · <a href="#kx-top">回到顶部</a></div>
+      <div class="kx-filing">沪ICP备2026008742号-3 ｜ 网络文化经营许可证 · 内容核验标准公示</div>
+    </div>
+  </div>
+</footer>
+
+<button class="kx-top" id="kxTop" type="button" aria-label="回到顶部" onclick="kxScrollTop()">↑</button>
+<div class="kx-toast" id="kxToast" role="status" aria-live="polite"></div>
+
+<!-- 弹窗：作者档案 -->
+<div class="kx-modal" id="kxModalAuthor" role="dialog" aria-modal="true" aria-labelledby="kxAuthorTitle">
+  <div class="kx-modal-box">
+    <button class="kx-modal-close" type="button" aria-label="关闭" onclick="kxCloseModal('kxModalAuthor')">×</button>
+    <h3 id="kxAuthorTitle">创作者档案</h3>
+    <div class="kx-author-info">
+      <div class="kx-creator-ava" style="background:linear-gradient(135deg,#ffcb45,#ff8a3c)" id="kxAuthorAva">创</div>
+      <div>
+        <div style="font-size:16px;font-weight:800;" id="kxAuthorName">创作者</div>
+        <div class="kx-role" style="color:#2ee6c5;font-size:12.5px;" id="kxAuthorRole">擅长领域</div>
+      </div>
+    </div>
+    <p id="kxAuthorDesc">简介</p>
+    <button class="kx-btn kx-btn-primary" type="button" onclick="kxToast('已关注该创作者，新作品将推送给你')">关注创作者</button>
+  </div>
+</div>
+
+<!-- 弹窗：投稿 -->
+<div class="kx-modal" id="kxModalSubmit" role="dialog" aria-modal="true" aria-labelledby="kxSubmitTitle">
+  <div class="kx-modal-box">
+    <button class="kx-modal-close" type="button" aria-label="关闭" onclick="kxCloseModal('kxModalSubmit')">×</button>
+    <h3 id="kxSubmitTitle">投稿与线索上传</h3>
+    <p>请简要描述线索内容。提交后编辑部将在 3 个工作日内与你联系，核验通过后进入制作流程。</p>
+    <form class="kx-cta-form" onsubmit="kxSubmitForm(event, true)">
+      <input type="text" name="name" placeholder="称呼" required>
+      <input type="text" name="contact" placeholder="联系方式" required>
+      <textarea name="msg" placeholder="线索描述：时间、地点、发生了什么" required></textarea>
+      <button class="kx-btn kx-btn-primary" type="submit" style="justify-content:center;">确认提交</button>
+    </form>
+    <p style="margin-top:10px;font-size:12.5px;color:#7d8b9d;">提示：涉及他人隐私的画面请先说明，平台会协助你完成必要处理。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- 公告关闭 ---------- */
+  window.kxCloseNotice = function(){
+    var n = $('kxNotice');
+    if(n){ n.style.display = 'none'; }
+    document.documentElement.style.setProperty('--kx-sticky', '64px');
+  };
+
+  /* ---------- 移动端导航 ---------- */
+  var navToggle = $('kxNavToggle');
+  var nav = $('kxNav');
+  if(navToggle && nav){
+    navToggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var search = $('kxSearch');
+  var searchFb = $('kxSearchFb');
+  if(search && searchFb){
+    var timer = null;
+    search.addEventListener('input', function(){
+      clearTimeout(timer);
+      var v = search.value.trim();
+      timer = setTimeout(function(){
+        if(!v){
+          searchFb.textContent = '';
+          return;
+        }
+        var hit = document.querySelectorAll('[data-tag]');
+        var count = 0;
+        hit.forEach(function(el){
+          var text = el.textContent || '';
+          if(text.indexOf(v) > -1){ count++; }
+        });
+        searchFb.textContent = count > 0 ? ('命中 ' + count + ' 条相关内容') : '暂未匹配，试试“线索”或“教程”';
+      }, 260);
+    });
+    search.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        var v = search.value.trim();
+        if(v){
+          searchFb.textContent = '正在检索：' + v;
+          var target = document.getElementById('kx-videos');
+          if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toastEl = $('kxToast');
+  var toastTimer = null;
+  window.kxToast = function(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('is-show');
+    }, 2200);
+  };
+
+  /* ---------- 点赞 ---------- */
+  window.kxLike = function(btn){
+    var numEl = btn.querySelector('.kx-like-num');
+    if(!numEl) return;
+    var n = parseInt(numEl.textContent.replace(/[^\d]/g,''), 10) || 0;
+    if(btn.classList.contains('is-liked')){
+      btn.classList.remove('is-liked');
+      numEl.textContent = String(n - 1);
+      kxToast('已取消点赞');
+    }else{
+      btn.classList.add('is-liked');
+      numEl.textContent = String(n + 1);
+      kxToast('点赞成功，感谢你的认可');
+    }
+  };
+
+  /* ---------- 收藏 ---------- */
+  window.kxSave = function(btn){
+    var on = btn.classList.toggle('is-saved');
+    btn.textContent = on ? '已收藏' : '收藏';
+    kxToast(on ? '已加入收藏夹' : '已取消收藏');
+  };
+
+  /* ---------- 复制 ---------- */
+  window.kxCopy = function(text){
+    var full = text + ' · 911爆料免费版官方网站';
+    var done = function(){ kxToast('链接已复制，可分享给朋友'); };
+    var fail = function(){ kxToast('复制失败，请手动选择文本'); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(full).then(done).catch(fail);
+    }else{
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = full;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      }catch(err){ fail(); }
+    }
+  };
+
+  /* ---------- 弹窗 ---------- */
+  window.kxOpenModal = function(id){
+    var m = $(id);
+    if(m){ m.classList.add('is-open'); }
+  };
+  window.kxCloseModal = function(id){
+    var m = $(id);
+    if(m){ m.classList.remove('is-open'); }
+  };
+  document.querySelectorAll('.kx-modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m){ m.classList.remove('is-open'); }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.kx-modal.is-open').forEach(function(m){
+        m.classList.remove('is-open');
+      });
+    }
+  });
+
+  /* ---------- 作者档案 ---------- */
+  window.kxOpenAuthor = function(name, role, desc){
+    var n = $('kxAuthorName'), r = $('kxAuthorRole'), d = $('kxAuthorDesc'), a = $('kxAuthorAva');
+    if(n) n.textContent = name;
+    if(r) r.textContent = role;
+    if(d) d.textContent = desc;
+    if(a) a.textContent = name.charAt(0);
+    kxOpenModal('kxModalAuthor');
+  };
+
+  /* ---------- 表单 ---------- */
+  window.kxSubmitForm = function(e, isModal){
+    e.preventDefault();
+    var form = e.target;
+    var msg = '提交成功，编辑部会在 3 个工作日内联系你';
+    form.reset();
+    if(isModal){ kxCloseModal('kxModalSubmit'); }
+    kxToast(msg);
+  };
+
+  /* ---------- 标签筛选 ---------- */
+  var chips = document.querySelectorAll('#kxFilterRow .kx-chip');
+  var cards = document.querySelectorAll('#kxVideoGrid [data-tag]');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('is-on'); });
+      chip.classList.add('is-on');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var tag = card.getAttribute('data-tag');
+        card.style.display = (f === 'all' || tag === f) ? '' : 'none';
+      });
+    });
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = $('kxTop');
+  window.kxScrollTop = function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  };
+  window.addEventListener('scroll', function(){
+    if(!topBtn) return;
+    if(window.scrollY > 620){
+      topBtn.classList.add('is-show');
+    }else{
+      topBtn.classList.remove('is-show');
+    }
+  }, {passive:true});
+
+  /* ---------- 数字滚动 ---------- */
+  var counters = document.querySelectorAll('[data-count]');
+  var counted = false;
+  function runCounters(){
+    if(counted) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var suffix = el.querySelector('small');
+      var suffixHTML = suffix ? suffix.outerHTML : '';
+      var start = 0;
+      var step = Math.max(1, Math.floor(target / 52));
+      var t = setInterval(function(){
+        start += step;
+        if(start >= target){
+          start = target;
+          clearInterval(t);
+        }
+        el.innerHTML = start + suffixHTML;
+      }, 22);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var hero = document.getElementById('kx-hero');
+    if(hero){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ runCounters(); io.disconnect(); }
+        });
+      }, {threshold:0.3});
+      io.observe(hero);
+    }
+  }else{
+    runCounters();
+  }
+
+  /* ---------- 导航高亮 ---------- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.kx-nav a');
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 160;
+    var currentId = '';
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= pos){ currentId = sec.id; }
+    });
+    navLinks.forEach(function(a){
+      var href = a.getAttribute('href');
+      if(href === '#' + currentId){
+        a.classList.add('is-active');
+      }else{
+        a.classList.remove('is-active');
+      }
+    });
+  }, {passive:true});
+
+})();
+</script>
+</body>
+      </html>
